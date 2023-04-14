@@ -42,7 +42,6 @@ const SignupForm = () => {
       console.error(error);
       setShowAlert(true);
     }
-
     setUserFormData({
       username: "",
       email: "",
