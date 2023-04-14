@@ -1,11 +1,10 @@
 import React from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
-
 import Auth from "../utils/auth";
-import { removeBookId, saveBookIds } from '../utils/localStorage';
-import { useQuery, useMutation } from "@apollo/react-hooks";
 import { GET_ME } from "../utils/queries";
 import { REMOVE_BOOK } from "../utils/mutations";
+import { removeBookId, saveBookIds } from '../utils/localStorage';
+import { useQuery, useMutation } from "@apollo/react-hooks";
 
 const SavedBooks = () => {
   const { loading, data } = useQuery(GET_ME);
@@ -19,33 +18,6 @@ const SavedBooks = () => {
     if (!token) {
       return false;
     }
-
-  //   try {
-  //     const { user } = await removeBook({
-  //       variables: {
-  //         bookId: bookId,
-  //       },
-  //     });
-
-  //     userData = user;
-  //     removeBookId(bookId);
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
-  // try {
-  //   const response = await removeBook({ variables: { bookId } });
-  //       console.log('Deleted record: ', response);
-  //       // if (error) {
-  //       //   console.log(error);
-  //       // }
-  //     // also remove from Localstorage
-  //     removeBookId(bookId);
-  //   } catch (err) {
-  //     // display any caught errors here
-  //       console.error(err);
-  //   }
-  // };
 
   try {
     await removeBook({
@@ -83,37 +55,7 @@ const SavedBooks = () => {
               }:`
             : "You have no saved books!"}
         </h2>
-        {/* <CardColumns>
-          {userData.savedBooks?.map((book) => {
-            return (
-              <Card key={book.bookId} border="dark">
-                {book.image ? (
-                  <Card.Img
-                    src={book.image}
-                    alt={`The cover for ${book.title}`}
-                    variant="top"
-                  />
-                ) : null}
-                <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
-                  <p className="small">Authors: {book.authors}</p>
-                  <Card.Text>{book.description}</Card.Text>
-                  <Button
-                    className="btn-block btn-danger"
-                    onClick={() => handleDeleteBook(book.bookId)}
-                  >
-                    Delete this Book!
-                  </Button>
-                </Card.Body>
-              </Card>
-            );
-          })}
-        </CardColumns>
-      </Container>
-    </>
-  );
-}; */}
-
+      
 <CardColumns>
           {userData.savedBooks.map((book) => {
             return (
@@ -135,7 +77,5 @@ const SavedBooks = () => {
     </>
   );
 };
-
-
 
 export default SavedBooks;
