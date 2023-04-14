@@ -28,6 +28,6 @@ Bcrypt
 
 ## URL of the GitHub repository
 
-## URL of the GitHub repository
+## Deployed URL 
 
 https://github.com/Bamidele100/book-search-engine.git
