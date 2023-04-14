@@ -24,7 +24,7 @@ Bcrypt
 
 ## Generated images
 
-![alt text](./Assets/image1.png)
+![alt text](./Assets/images/Image1.png)
 
 ## URL of the GitHub repository
 
